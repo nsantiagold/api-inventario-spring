@@ -33,3 +33,9 @@ API REST desarrollada con **Java** y **Spring Boot** para la gestión de product
 4. Ejecuta la aplicación desde tu IDE favorito (IntelliJ IDEA) o usando Maven:
    
      mvn spring-boot:run
+
+5.## 🎥 Demostración en funcionamiento
+
+<div align="center">
+  <img src="API GIF.gif" alt="Demo de la API REST" width="800px"/>
+</div>

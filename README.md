@@ -34,7 +34,7 @@ API REST desarrollada con **Java** y **Spring Boot** para la gestión de product
    
      mvn spring-boot:run
 
-5.## 🎥 Demostración en funcionamiento
+## 🎥 Demostración en funcionamiento
 
 <div align="center">
   <img src="API GIF.gif" alt="Demo de la API REST" width="800px"/>

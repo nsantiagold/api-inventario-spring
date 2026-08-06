@@ -25,9 +25,11 @@ API REST desarrollada con **Java** y **Spring Boot** para la gestión de product
    git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/TU_USUARIO/TU_REPOSITORIO.git)
 
 2. Configura tu base de datos en src/main/resources/application.properties:
+3. 
     spring.datasource.url=jdbc:mysql://localhost:3306/tu_base_de_datos
     spring.datasource.username=tu_usuario
     spring.datasource.password=tu_contraseña
 
-3. Ejecuta la aplicación desde tu IDE favorito (IntelliJ IDEA) o usando Maven:
+4. Ejecuta la aplicación desde tu IDE favorito (IntelliJ IDEA) o usando Maven:
+   
      mvn spring-boot:run

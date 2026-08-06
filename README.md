@@ -36,6 +36,4 @@ API REST desarrollada con **Java** y **Spring Boot** para la gestión de product
 
 ## 🎥 Demostración en funcionamiento
 
-## 🎥 Demostración en funcionamiento
-
-![Demo de la API REST](APIGIF.gif)
+![Demo de la API REST](demo/APIGIF.gif)

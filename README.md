@@ -3,7 +3,7 @@
 API REST desarrollada con **Java** y **Spring Boot** para la gestión de productos, diseñada con operaciones CRUD completas conectada a una base de datos relacional (MySQL).
 
 ## 🚀 Tecnologías utilizadas
-* **Java** (Versión de tu JDK)
+* **Java**
 * **Spring Boot** (Web, Data JPA)
 * **MySQL**
 * **Maven**
@@ -22,7 +22,7 @@ API REST desarrollada con **Java** y **Spring Boot** para la gestión de product
 
 1. Clona este repositorio:
    ```bash
-   git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/TU_USUARIO/TU_REPOSITORIO.git)
+   git clone https://github.com/nsantiagold/api-inventario-spring
 
 2. Configura tu base de datos en src/main/resources/application.properties:
 3. 

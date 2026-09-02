@@ -65,7 +65,7 @@ URL base: `http://localhost:8080/api/products`
 
 ```bash
 git clone https://github.com/nsantiagold/api-inventario-spring.git
-cd api-inventario-spring/demo
+cd api-inventario-spring
 ```
 
 ### 2. Crear la base de datos
@@ -116,7 +116,7 @@ http://localhost:8080/api/products
 
 ## Demostración
 
-![Demostración de la API REST](demo/APIGIF.gif)
+![Demostración de la API REST](APIGIF.gif)
 
 ## Aprendizajes aplicados
 

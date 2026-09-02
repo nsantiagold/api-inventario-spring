@@ -74,36 +74,45 @@ cd api-inventario-spring/demo
 CREATE DATABASE inventario_db;
 ```
 
-### 3. Configurar la conexión
+### 3. Configurar variables de entorno
 
-Actualiza las credenciales locales en `src/main/resources/application.properties`:
+La aplicación obtiene la conexión mediante las siguientes variables:
 
-```properties
-server.port=8080
-spring.datasource.url=jdbc:mysql://localhost:3306/inventario_db?useSSL=false&serverTimezone=UTC
-spring.datasource.username=TU_USUARIO
-spring.datasource.password=TU_CONTRASENA
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-```
+| Variable | Descripción | Valor local predeterminado |
+|---|---|---|
+| `DB_URL` | URL de conexión a MySQL | `jdbc:mysql://localhost:3306/inventario_db?useSSL=false&serverTimezone=UTC` |
+| `DB_USER` | Usuario de MySQL | `root` |
+| `DB_PASSWORD` | Contraseña de MySQL | Vacía |
 
-No publiques contraseñas reales ni archivos con credenciales sensibles.
+No publiques contraseñas reales en `application.properties`, archivos `.env` o commits.
 
 ### 4. Ejecutar la aplicación
 
-En Windows:
+En Windows PowerShell:
 
 ```powershell
+$env:DB_USER="root"
+$env:DB_PASSWORD="TU_CONTRASENA"
 .\mvnw.cmd spring-boot:run
 ```
 
 En Linux o macOS:
 
 ```bash
+export DB_USER=root
+export DB_PASSWORD='TU_CONTRASENA'
 ./mvnw spring-boot:run
 ```
 
-También puedes ejecutarla desde IntelliJ IDEA utilizando la clase `DemoApplication`.
+Si tu base de datos utiliza otra URL, define también `DB_URL`.
+
+En IntelliJ IDEA, agrega `DB_URL`, `DB_USER` y `DB_PASSWORD` desde **Run → Edit Configurations → Environment variables** y ejecuta la clase `DemoApplication`.
+
+Una vez iniciada, la API estará disponible en:
+
+```text
+http://localhost:8080/api/products
+```
 
 ## Demostración
 
@@ -111,4 +120,4 @@ También puedes ejecutarla desde IntelliJ IDEA utilizando la clase `DemoApplicat
 
 ## Aprendizajes aplicados
 
-Este proyecto permite practicar la creación de controladores REST, el mapeo de entidades con JPA, el uso de repositorios, la conexión con MySQL y la organización de un proyecto Backend con Maven.
+Este proyecto permite practicar la creación de controladores REST, el mapeo de entidades con JPA, el uso de repositorios, la conexión con MySQL, la gestión segura de configuración y la organización de un proyecto Backend con Maven.

@@ -1,0 +1,22 @@
+# Entornos y credenciales locales
+.env
+.env.*
+!.env.example
+*.local.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Visual Studio Code
+.vscode/
+
+# Compilación
+**/target/
+**/build/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,39 +1,114 @@
-# 📦 API REST de Inventario - Backend (Spring Boot)
+# 📦 API REST de Inventario
 
-API REST desarrollada con **Java** y **Spring Boot** para la gestión de productos, diseñada con operaciones CRUD completas conectada a una base de datos relacional (MySQL).
+API REST desarrollada con **Java y Spring Boot** para administrar un inventario de productos. Implementa operaciones CRUD y persistencia en MySQL mediante Spring Data JPA.
 
-## 🚀 Tecnologías utilizadas
-* **Java**
-* **Spring Boot** (Web, Data JPA)
-* **MySQL**
-* **Maven**
+## Funcionalidades
 
-## 🔌 Endpoints de la API (Endpoints principales)
+- Consultar todos los productos.
+- Buscar un producto por su identificador.
+- Registrar nuevos productos.
+- Actualizar nombre, precio y existencias.
+- Eliminar productos.
+- Crear y actualizar automáticamente la tabla mediante JPA/Hibernate.
 
-| Método     | Endpoint                 | Descripción |
-| :--- |       :--- |                   :--- |
-| `GET` | `/api/products` | Obtiene la lista completa de productos. |
-| `GET` | `/api/products/{id}` | Busca un producto específico por su ID. |
-| `POST` | `/api/products` | Crea un nuevo producto. |
-| `PUT` | `/api/products/{id}` | Actualiza un producto existente. |
-| `DELETE` | `/api/products/{id}` | Elimina un producto por su ID. |
+## Tecnologías
 
-## 🛠️ Cómo ejecutar el proyecto localmente
+- Java 17
+- Spring Boot
+- Spring Web MVC
+- Spring Data JPA
+- MySQL
+- Maven
+- Lombok
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/nsantiagold/api-inventario-spring
+## Modelo de producto
 
-2. Configura tu base de datos en src/main/resources/application.properties:
-3. 
-    spring.datasource.url=jdbc:mysql://localhost:3306/tu_base_de_datos
-    spring.datasource.username=tu_usuario
-    spring.datasource.password=tu_contraseña
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `id` | Long | Identificador generado automáticamente |
+| `name` | String | Nombre del producto |
+| `price` | Double | Precio del producto |
+| `stock` | Integer | Cantidad disponible |
 
-4. Ejecuta la aplicación desde tu IDE favorito (IntelliJ IDEA) o usando Maven:
-   
-     mvn spring-boot:run
+## Endpoints
 
-## 🎥 Demostración en funcionamiento
+URL base: `http://localhost:8080/api/products`
 
-![Demo de la API REST](demo/APIGIF.gif)
+| Método | Endpoint | Descripción |
+|---|---|---|
+| `GET` | `/api/products` | Obtiene todos los productos |
+| `GET` | `/api/products/{id}` | Obtiene un producto por ID |
+| `POST` | `/api/products` | Registra un producto |
+| `PUT` | `/api/products/{id}` | Actualiza un producto |
+| `DELETE` | `/api/products/{id}` | Elimina un producto |
+
+### Ejemplo de solicitud
+
+```json
+{
+  "name": "Teclado mecánico",
+  "price": 1299.90,
+  "stock": 15
+}
+```
+
+## Ejecución local
+
+### Requisitos
+
+- Java 17
+- MySQL
+- Git
+- Maven, o utilizar Maven Wrapper incluido en el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/nsantiagold/api-inventario-spring.git
+cd api-inventario-spring/demo
+```
+
+### 2. Crear la base de datos
+
+```sql
+CREATE DATABASE inventario_db;
+```
+
+### 3. Configurar la conexión
+
+Actualiza las credenciales locales en `src/main/resources/application.properties`:
+
+```properties
+server.port=8080
+spring.datasource.url=jdbc:mysql://localhost:3306/inventario_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=TU_USUARIO
+spring.datasource.password=TU_CONTRASENA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+No publiques contraseñas reales ni archivos con credenciales sensibles.
+
+### 4. Ejecutar la aplicación
+
+En Windows:
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+En Linux o macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+También puedes ejecutarla desde IntelliJ IDEA utilizando la clase `DemoApplication`.
+
+## Demostración
+
+![Demostración de la API REST](demo/APIGIF.gif)
+
+## Aprendizajes aplicados
+
+Este proyecto permite practicar la creación de controladores REST, el mapeo de entidades con JPA, el uso de repositorios, la conexión con MySQL y la organización de un proyecto Backend con Maven.
